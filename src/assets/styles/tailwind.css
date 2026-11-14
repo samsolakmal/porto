@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand Colors */
+    --primary: #9B1B1B;
+    --primary-light: #8B1A1A;
+    --dark: #0D0D0D;
+    --dark-light: #1A1A1A;
+    --light: #F5F5F5;
+    --white: #FFFFFF;
+    --text: #2D2D2D;
+    --text-secondary: #6B6B6B;
+  }
+
+  body {
+    font-family: 'Inter', 'JetBrains Mono', system-ui, -apple-system, sans-serif;
+    background-color: var(--dark);
+    color: var(--light);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--primary);
+    color: var(--white);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 rounded-xl font-semibold text-white 
+           bg-[var(--primary)] hover:bg-[var(--primary-light)] 
+           transition-all duration-300 transform hover:-translate-y-0.5
+           shadow-lg hover:shadow-xl;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 rounded-xl font-semibold text-[var(--primary)] 
+           border-2 border-[var(--primary)] 
+           hover:bg-[var(--primary)] hover:text-white 
+           transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply rounded-xl overflow-hidden 
+           transition-all duration-300 
+           hover:shadow-xl 
+           hover:-translate-y-1;
+  }
+}
